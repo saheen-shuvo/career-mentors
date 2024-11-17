@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "image": "https://i.ibb.co.com/KjK7jdS/card1.jpg",
+    "service_name": "Career Counseling Sessions",
+    "category": "Group",
+    "description": "Get expert advice on career planning, job search strategies, and professional growth.",
+    "pricing": "$99",
+    "duration": "05-12-24 5:00pm - 6:00pm",
+    "counselor": "John Doe",
+    "rating": 4.7,
+    "experience": "5+ years of experience"
+  },
+  {
+    "id": 2,
+    "image": "https://i.ibb.co.com/3kxFXtg/card2.jpg",
+    "service_name": "Resume Review",
+    "category": "Online",
+    "description": "Have your resume reviewed by an expert to ensure it stands out in the competitive job market.",
+    "pricing": "$50",
+    "duration": "06-12-24 10:00am - 11:00am",
+    "counselor": "Jane Smith",
+    "rating": 4.9,
+    "experience": "8+ years of experience"
+  },
+  {
+    "id": 3,
+    "image": "https://i.ibb.co.com/kSP4p4n/card3.jpg",
+    "service_name": "Job Interview Preparation",
+    "category": "Offline",
+    "description": "Prepare for your next job interview with mock sessions, feedback, and tips for success.",
+    "pricing": "$120",
+    "duration": "07-12-24 3:00pm - 4:00pm",
+    "counselor": "Michael Lee",
+    "rating": 4.8,
+    "experience": "10+ years of experience"
+  },
+  {
+    "id": 4,
+    "image": "https://i.ibb.co.com/4J1mwmF/card4.jpg",
+    "service_name": "LinkedIn Profile Optimization",
+    "category": "Group",
+    "description": "Enhance your LinkedIn profile to attract more recruiters and stand out in your professional network.",
+    "pricing": "$75",
+    "duration": "08-12-24 1:00pm - 2:00pm",
+    "counselor": "Emily Davis",
+    "rating": 4.6,
+    "experience": "7+ years of experience"
+  },
+  {
+    "id": 5,
+    "image": "https://i.ibb.co.com/fXgWV2r/card5.jpg",
+    "service_name": "Career Strategy Consulting",
+    "category": "Offline",
+    "description": "Get customized strategies to advance your career, navigate transitions, and align your skills with market needs.",
+    "pricing": "$150",
+    "duration": "09-12-24 2:00pm - 3:30pm",
+    "counselor": "Sarah Williams",
+    "rating": 4.9,
+    "experience": "12+ years of experience"
+  },
+  {
+    "id": 6,
+    "image": "https://i.ibb.co.com/9cqBzX3/card6.jpg",
+    "service_name": "Personal Branding Session",
+    "category": "Online",
+    "description": "Build a powerful personal brand to stand out in your industry, including social media strategies and content creation.",
+    "pricing": "$90",
+    "duration": "10-12-24 4:00pm - 5:00pm",
+    "counselor": "David Miller",
+    "rating": 4.8,
+    "experience": "6+ years of experience"
+  }
+]
