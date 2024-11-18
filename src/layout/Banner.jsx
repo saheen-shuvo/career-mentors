@@ -4,10 +4,10 @@ import bannerImg3 from "../assets/banner2.jpg";
 const Banner = () => {
   return (
     <div className="carousel w-full mt-5">
-      <div id="slide1" className="carousel-item relative w-full h-[550px]">
+      <div id="slide1" className="carousel-item relative w-full h-[300px] lg:h-[550px]">
         <img src={bannerImg1} className="w-full object-cover opacity-60 " />
         <div className="absolute w-[50%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 space-y-3">
-          <h1 className="text-center text-gray-800 text-5xl font-extrabold">
+          <h1 className="text-center text-gray-800  text-xl md:text-5xl font-extrabold">
           Book a Personal Consultation
           </h1>
           <p className="text-center text-sm">
@@ -25,10 +25,10 @@ const Banner = () => {
           </a>
         </div>
       </div>
-      <div id="slide2" className="carousel-item relative w-full h-[550px]">
+      <div id="slide2" className="carousel-item relative w-full h-[300px] lg:h-[550px]">
         <img src={bannerImg2} className="w-full object-cover opacity-60" />
         <div className="absolute w-[50%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 space-y-3">
-          <h1 className="text-center text-gray-800 text-5xl font-extrabold">
+          <h1 className="text-center text-gray-800 text-xl md:text-5xl font-extrabold">
             Get Your Resume Reviewed
           </h1>
           <p className="text-center text-sm">
@@ -46,10 +46,10 @@ const Banner = () => {
           </a>
         </div>
       </div>
-      <div id="slide3" className="carousel-item relative w-full h-[550px]">
+      <div id="slide3" className="carousel-item relative w-full h-[300px] lg:h-[550px]">
         <img src={bannerImg3} className="w-full object-cover opacity-60" />
         <div className="absolute w-[50%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 space-y-3">
-      <h1 className="text-center text-gray-800 text-5xl font-extrabold">Achieve Your Dream Job</h1>
+      <h1 className="text-center text-gray-800 text-xl md:text-5xl  font-extrabold">Achieve Your Dream Job</h1>
       <p className="text-center text-sm">Unlock the path to your ideal career with expert strategies, job search tips, and personalized advice. Let us guide you toward your dream job with confidence.</p>
       </div>
         <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">

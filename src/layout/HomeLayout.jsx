@@ -2,6 +2,8 @@ import React from 'react';
 import Header from '../components/Header';
 import Banner from './Banner';
 import Category from '../pages/Category';
+import OurTeam from '../components/OurTeam';
+import Success from '../components/Success';
 
 const HomeLayout = () => {
     return (
@@ -13,6 +15,8 @@ const HomeLayout = () => {
                 </section>
                 <main>
                     <Category></Category>
+                    <OurTeam></OurTeam>
+                    <Success></Success>
                 </main>
             </header>
             <nav>

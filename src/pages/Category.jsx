@@ -17,7 +17,7 @@ const Category = () => {
             <div>
                 <h1 className="text-center text-4xl my-10 font-extrabold">Get Our Best Services</h1>
             </div>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {
                 category.map((singleCard) =><div className="card card-compact bg-base-100 shadow-xl">
                 <figure>
@@ -28,7 +28,9 @@ const Category = () => {
                 <div className="card-body">
                   <h2 className="card-title">{singleCard.service_name}</h2>
                   <p>{singleCard.description}</p>
-                  <p className="text-lg font-semibold">Per Session: {singleCard.pricing}</p>
+                  <p className="">Session Category: {singleCard.category}</p>
+                  <p className="">Counselor Name: {singleCard.counselor}</p>
+                  <p className="text-base font-semibold">Per Session: {singleCard.pricing}</p>
                   <div className="card-actions justify-end">
                     <button className="btn w-full">View Details</button>
                   </div>
