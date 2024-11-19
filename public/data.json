@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "image": "https://i.ibb.co.com/KjK7jdS/card1.jpg",
     "service_name": "Career Counseling Sessions",
     "category": "Group",
@@ -12,7 +12,7 @@
     "experience": "5+ years of experience"
   },
   {
-    "id": 2,
+    "id": "2",
     "image": "https://i.ibb.co.com/3kxFXtg/card2.jpg",
     "service_name": "Resume Review",
     "category": "Online",
@@ -24,7 +24,7 @@
     "experience": "8+ years of experience"
   },
   {
-    "id": 3,
+    "id": "3",
     "image": "https://i.ibb.co.com/kSP4p4n/card3.jpg",
     "service_name": "Job Interview Preparation",
     "category": "Offline",
@@ -36,7 +36,7 @@
     "experience": "10+ years of experience"
   },
   {
-    "id": 4,
+    "id": "4",
     "image": "https://i.ibb.co.com/4J1mwmF/card4.jpg",
     "service_name": "LinkedIn Profile Optimization",
     "category": "Group",
@@ -48,7 +48,7 @@
     "experience": "7+ years of experience"
   },
   {
-    "id": 5,
+    "id": "5",
     "image": "https://i.ibb.co.com/fXgWV2r/card5.jpg",
     "service_name": "Career Strategy Consulting",
     "category": "Offline",
@@ -60,7 +60,7 @@
     "experience": "12+ years of experience"
   },
   {
-    "id": 6,
+    "id": "6",
     "image": "https://i.ibb.co.com/9cqBzX3/card6.jpg",
     "service_name": "Personal Branding Session",
     "category": "Online",
