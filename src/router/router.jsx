@@ -4,6 +4,8 @@ import Category from '../pages/Category';
 import Details from '../components/Details';
 import Login from '../components/Login';
 import Register from '../components/Register';
+import PrivateRoutes from '../pages/PrivateRoutes';
+import Profile from '../components/Profile';
 
 const router = createBrowserRouter([
     {
@@ -16,7 +18,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "/details/:id",
-                element: <Details></Details>
+                element: <PrivateRoutes><Details></Details></PrivateRoutes>
+            },
+            {
+                path: "/profile",
+                element: <PrivateRoutes><Profile></Profile></PrivateRoutes>
             },
             {
                 path: "/login",

@@ -23,11 +23,12 @@ const Header = () => {
                 <NavLink to="/">Home</NavLink>
                 <NavLink to="/login">Log in</NavLink>
                 <NavLink to="/register">Register</NavLink>
+                <NavLink to="/profile">Profile</NavLink>
             </div>
             <div>
                 {
                     user ? <>
-                    <span>{user.email}</span>
+                    <span>{user?.email}</span>
                     <a onClick={handleLogOut} className='btn'>Log out</a>
                     </> : <Link to="/login" className='btn'>Log in</Link>
                 }

@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import { FaGoogle } from "react-icons/fa6";
 
 const Register = () => {
 
+    const navigate = useNavigate();
     const {createUser} = useContext(AuthContext);
 
   const handleRegister = (e) => {
@@ -18,6 +20,8 @@ const Register = () => {
     createUser(email, password)
     .then(result => {
         console.log(result.user);
+        e.target.reset();
+        navigate('/');
     })
     .catch(error => {
         console.log("ERROR", error.message)
@@ -77,8 +81,11 @@ const Register = () => {
               />
 
             </div>
-            <div className="form-control mt-6">
+            <div className="form-control">
               <button className="btn btn-primary">Register</button>
+            </div>
+            <div className="form-control">
+              <button className="btn"><FaGoogle />Register with Google</button>
             </div>
           </form>
           <p className="text-xs text-center mb-7">
