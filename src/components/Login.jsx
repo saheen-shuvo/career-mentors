@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa6";
@@ -7,6 +7,7 @@ import { FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const [showPass, setShowPass] = useState(false);
+  const emailRef = useRef();
 
   const navigate = useNavigate();
   const { signInUser, signInWithGoogle } = useContext(AuthContext);
@@ -27,6 +28,11 @@ const Login = () => {
       .catch((error) => {
         console.log("ERROR", error.message);
       });
+  };
+
+  const handleForgetPassword = () => {
+    const email = emailRef.current.value;
+    navigate("/resetPassword", { state: { email } });
   };
 
   const handleGoogleSignIn = () => {
@@ -51,6 +57,7 @@ const Login = () => {
                 type="email"
                 placeholder="email"
                 name="email"
+                ref={emailRef}
                 className="input input-bordered"
                 required
               />
@@ -72,10 +79,13 @@ const Login = () => {
                 className="input input-bordered"
                 required
               />
-              <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
+              <label onClick={handleForgetPassword} className="label">
+                <Link
+                  to="/resetPassword"
+                  className="label-text-alt link link-hover"
+                >
                   Forgot password?
-                </a>
+                </Link>
               </label>
             </div>
             <div className="form-control mt-5">

@@ -4,6 +4,8 @@ import { IoStar } from "react-icons/io5";
 
 const Details = () => {
   const [details, setDetails] = useState([]);
+  const [feedback, setFeedback] = useState("");
+  const [submittedFeedback, setSubmittedFeedback] = useState("");
   const { id } = useParams();
 
   useEffect(() => {
@@ -25,6 +27,11 @@ const Details = () => {
     return <div className="text-center py-10">Loading...</div>;
   }
 
+  const handleFeedbackSubmit = () => {
+    setSubmittedFeedback(feedback); 
+    setFeedback("");
+  };
+
   return(
   <div className="py-10">
     <div>
@@ -42,9 +49,14 @@ const Details = () => {
         <p className="px-6 flex items-center gap-1">Service Rating: {findDetail.rating} <IoStar /></p>
         <p className="px-6">Experience: {findDetail.experience}</p>
         <div className="flex flex-col lg:flex-row gap-2 mx-6">
-        <input type="text" placeholder="Comment Your Feedback" className="input input-bordered w-full" />
-        <button className="btn">Feedback</button>
+        <input type="text" placeholder="Comment Your Feedback" className="input input-bordered w-full" value={feedback} onChange={(e) => setFeedback(e.target.value)} />
+        <button className="btn" onClick={handleFeedbackSubmit}>Feedback</button>
         </div>
+        {submittedFeedback && (
+            <p className="mt-4 px-6 text-black">
+              You: <br /> {submittedFeedback}
+            </p>
+          )}
       </div>
     </div>
 

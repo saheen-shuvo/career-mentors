@@ -54,7 +54,7 @@ const OurTeam = () => {
               className="rounded-xl h-[250px] object-cover"
             />
           </figure>
-          <div className="card-body items-center text-center">
+          <div data-aos="fade-right" className="card-body items-center text-center">
             <h2 className="card-title">Sarah Williams</h2>
             <p>Get customized strategies to advance your career, navigate transitions, and align your skills with market needs.</p>
             <div className="card-actions">

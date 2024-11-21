@@ -32,8 +32,11 @@ const Header = () => {
             <div>
                 {
                     user ? <>
-                    <span>{user?.email}</span>
-                    <a onClick={handleLogOut} className='btn'>Log out</a>
+                    <div className='relative flex items-center gap-6'><div className='relative group'><img className='w-10 h-10 object-cover rounded-full' src={user?.photoURL} alt="" /><div
+          className="absolute bottom-[-35px] left-1/2 transform -translate-x-1/2 hidden p-5 group-hover:block text-black text-[9px] rounded-md"
+        >
+          {user?.displayName || "Unknown User"}
+        </div></div><a onClick={handleLogOut} className='btn'>Log out</a></div>
                     </> : <Link to="/login" className='btn'>Log in</Link>
                 }
             </div>

@@ -4,6 +4,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa6";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const [showPass, setShowPass] = useState(false);
@@ -15,11 +16,12 @@ const Register = () => {
     e.preventDefault();
 
     const name = e.target.name.value;
+    const photo = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     const terms = e.target.terms.checked;
 
-    console.log(name, email, password, terms);
+    console.log(name, photo, email, password, terms);
 
     if(!terms){
       alert("Please accept our terms and condition");
@@ -43,12 +45,20 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
-        e.target.reset();
-        navigate("/");
+        const profile = {
+          displayName: name,
+          photoURL: photo,
+        };
+        return updateProfile(result.user, profile);
       })
-      .catch((error) => {
-        console.log("ERROR", error.message);
-      });
+        .then(() => {
+          alert("User Profile Updated");
+          e.target.reset();
+          navigate("/");
+        })
+        .catch((error) => {
+          console.log("Error:", error.message);
+        })
   };
 
   const handleGoogleSignIn = () => {
@@ -94,7 +104,7 @@ const Register = () => {
               <input
                 type="text"
                 placeholder="photo url"
-                name="photoURL"
+                name="photo"
                 className="input input-bordered"
                 required
               />
