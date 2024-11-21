@@ -3,6 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { auth } from "../firebase.init";
+import { Bounce, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet";
 
 const ResetPass = () => {
 
@@ -33,10 +36,20 @@ const ResetPass = () => {
     console.log(emailRef.current.value, "get me email address");
     const email = emailRef.current.value;
     if (!email) {
-      alert("Please Provide a valid Email Address");
+      console.log("Please Provide a valid Email Address");
     } else {
       sendPasswordResetEmail(auth, email).then(() => {
-        alert("Password Reset Email Sent, please check your mail");
+        toast.success("Password Reset Email sent. Please check gmail.", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
       });
     }
   };
@@ -44,6 +57,9 @@ const ResetPass = () => {
 
   return (
     <div className="hero py-8">
+          <Helmet>
+    <title>Career Mentor's | Reset Password</title>
+    </Helmet>
       <div className="hero-content">
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <form onSubmit={handleLogin} className="card-body">
@@ -61,7 +77,7 @@ const ResetPass = () => {
               />
             </div>
             <div className="form-control mt-5">
-              <button  onClick={handleForgetPassword} className="btn btn-primary">Reset Password</button>
+              <a href="https://mail.google.com/mail/u/0/#inbox"><button  onClick={handleForgetPassword} className="btn btn-primary">Reset Password</button></a>
             </div>
           </form>
           <p className="text-xs text-center mb-7">

@@ -5,6 +5,5 @@
 @tailwind utilities;
 
 a.active{
-  background-color: #D72050;
-  color: white;
+  color: orangered;
 }

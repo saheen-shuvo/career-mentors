@@ -4,10 +4,19 @@ import { AuthContext } from "../providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa6";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import { Bounce, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet";
+
 
 const Login = () => {
   const [showPass, setShowPass] = useState(false);
   const emailRef = useRef();
+
+  const handleEmailChange = (e) => {
+    setInputEmail(e.target.value);
+    setEmail(e.target.value);
+  };
 
   const navigate = useNavigate();
   const { signInUser, signInWithGoogle } = useContext(AuthContext);
@@ -23,6 +32,19 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         e.target.reset();
+
+        toast.success("Logged in Successfully", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+
         navigate("/");
       })
       .catch((error) => {
@@ -39,6 +61,19 @@ const Login = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
+
+        toast.success("Logged in Successfully", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+        
         navigate("/");
       })
       .catch((error) => console.log("ERROR", error.message));
@@ -46,6 +81,9 @@ const Login = () => {
 
   return (
     <div className="hero py-8">
+          <Helmet>
+    <title>Career Mentor's | Log in</title>
+    </Helmet>
       <div className="hero-content">
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <form onSubmit={handleLogin} className="card-body">
@@ -58,6 +96,7 @@ const Login = () => {
                 placeholder="email"
                 name="email"
                 ref={emailRef}
+                onChange={handleEmailChange}
                 className="input input-bordered"
                 required
               />

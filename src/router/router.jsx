@@ -7,11 +7,14 @@ import Register from '../components/Register';
 import PrivateRoutes from '../pages/PrivateRoutes';
 import Profile from '../components/Profile';
 import ResetPass from '../components/ResetPass';
+import Reviews from '../components/Reviews';
+import ErrorPage from '../components/ErrorPage';
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <HomeLayout></HomeLayout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: "/",
@@ -24,6 +27,10 @@ const router = createBrowserRouter([
             {
                 path: "/profile",
                 element: <PrivateRoutes><Profile></Profile></PrivateRoutes>
+            },
+            {
+                path: "/reviews",
+                element: <PrivateRoutes><Reviews></Reviews></PrivateRoutes>
             },
             {
                 path: "/resetPassword",

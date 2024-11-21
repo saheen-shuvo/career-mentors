@@ -5,12 +5,15 @@ import { FaGoogle } from "react-icons/fa6";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { updateProfile } from "firebase/auth";
+import { Bounce, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const [showPass, setShowPass] = useState(false);
 
   const navigate = useNavigate();
-  const { createUser, signInWithGoogle } = useContext(AuthContext);
+  const { createUser, signInWithGoogle, setLoading } = useContext(AuthContext);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -44,7 +47,20 @@ const Register = () => {
 
     createUser(email, password)
       .then((result) => {
+
         console.log(result.user);
+        toast.success("Account Created Successfully", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+
         const profile = {
           displayName: name,
           photoURL: photo,
@@ -52,7 +68,7 @@ const Register = () => {
         return updateProfile(result.user, profile);
       })
         .then(() => {
-          alert("User Profile Updated");
+          setLoading(true);
           e.target.reset();
           navigate("/");
         })
@@ -65,6 +81,19 @@ const Register = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
+
+        toast.success("Logged in Successfully", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+        });
+        
         navigate("/");
       })
       .catch((error) => console.log("ERROR", error.message));
@@ -72,6 +101,9 @@ const Register = () => {
 
   return (
     <div className="hero py-8">
+          <Helmet>
+    <title>Career Mentor's | Register</title>
+    </Helmet>
       <div className="hero-content">
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
           <form onSubmit={handleRegister} className="card-body">
