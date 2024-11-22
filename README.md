@@ -6,6 +6,7 @@ Career Mentor's is a platform that offers a wide range of career-related service
 - **Career Counseling**: Personalized guidance to help you navigate your career.
 - **Resume Reviews**: Improve your resume to stand out to potential employers.
 - **LinkedIn Profile Optimization**: Boost your professional presence on LinkedIn.
+- **Job Interview Preparation**: Clients will get trained for their future interviews.
 - **Client Reviews**: Hear from our satisfied customers.
 
 ## Tools and Technologies Used

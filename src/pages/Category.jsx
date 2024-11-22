@@ -8,7 +8,7 @@ const Category = () => {
   const [category, setCategory] = useState([]);
 
   useEffect(() => {
-    fetch("../../public/data.json")
+    fetch("/data.json")
       .then((res) => res.json())
       .then((data) => {
         setCategory(data);

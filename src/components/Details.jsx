@@ -13,15 +13,15 @@ const Details = () => {
       .then((res) => res.json())
       .then((data) => {
         setDetails(data);
-        console.log("Here is data", data);
+        // console.log("Here is data", data);
       });
   }, []);
-  console.log(details);
-  console.log("Params", id);
+  // console.log(details);
+  // console.log("Params", id);
 
   const findDetail = details.find((detail) => detail?.id === id);
 
-  console.log("Find details is here", findDetail);
+  // console.log("Find details is here", findDetail);
 
   if (!findDetail) {
     return <div className="text-center py-10">Loading...</div>;

@@ -19,11 +19,11 @@ const ResetPass = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    console.log(email, password);
+    // console.log(email, password);
 
     signInUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
         e.target.reset();
         navigate("/");
       })
@@ -33,7 +33,7 @@ const ResetPass = () => {
   };
 
   const handleForgetPassword = () => {
-    console.log(emailRef.current.value, "get me email address");
+    // console.log(emailRef.current.value, "get me email address");
     const email = emailRef.current.value;
     if (!email) {
       console.log("Please Provide a valid Email Address");

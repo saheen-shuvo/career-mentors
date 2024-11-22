@@ -24,7 +24,7 @@ const Register = () => {
     const password = e.target.password.value;
     const terms = e.target.terms.checked;
 
-    console.log(name, photo, email, password, terms);
+    // console.log(name, photo, email, password, terms);
 
     if(!terms){
       alert("Please accept our terms and condition");
@@ -48,7 +48,7 @@ const Register = () => {
     createUser(email, password)
       .then((result) => {
 
-        console.log(result.user);
+        // console.log(result.user);
         toast.success("Account Created Successfully", {
           position: "top-center",
           autoClose: 2000,
@@ -80,7 +80,7 @@ const Register = () => {
   const handleGoogleSignIn = () => {
     signInWithGoogle()
       .then((result) => {
-        console.log(result.user);
+        // console.log(result.user);
 
         toast.success("Logged in Successfully", {
           position: "top-center",
