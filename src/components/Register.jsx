@@ -27,21 +27,49 @@ const Register = () => {
     // console.log(name, photo, email, password, terms);
 
     if(!terms){
-      alert("Please accept our terms and condition");
+      toast.warn("Please accept our terms and condition.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
       return;
     }
 
     if (password.length < 6) {
-      alert("Password should be at least 6 characters or longer.");
+      toast.warn("Password should be at least 6 characters or longer.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
       return;
     }
 
     const passwordRegex =
       /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*()_+[\]{};':"\\|,.<>\/?`~])[A-Za-z\d!@#$%^&*()_+[\]{};':"\\|,.<>\/?`~]{6,}$/;
     if (!passwordRegex.test(password)) {
-      alert(
-        "Password must contain at least one upper case, one lower case, and one special character"
-      );
+      toast.warn("Password must contain at least one upper case, one lower case, and one special character", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
       return;
     }
 
